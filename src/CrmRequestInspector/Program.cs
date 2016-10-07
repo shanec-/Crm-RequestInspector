@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using Microsoft.Xrm.Client;
 using Microsoft.Xrm.Sdk.Client;
 using Serilog;
@@ -13,7 +14,7 @@ namespace CrmRequestInspector
             ExecuteOperation();
         }
 
-        public static void InitializeLog()
+        private static void InitializeLog()
         {
             string logFolderPath = ConfigurationManager.AppSettings["LogFolderPath"];
 
@@ -31,7 +32,7 @@ namespace CrmRequestInspector
             Log.Logger = loggerConfiguration.CreateLogger();
         }
 
-        public static void ExecuteOperation()
+        private static void ExecuteOperation()
         {
             string crmConnectionString = ConfigurationManager.ConnectionStrings["crm"].ConnectionString;
             var crmConnection = new CrmConnection(new ConnectionStringSettings("Crm", crmConnectionString));
@@ -40,11 +41,13 @@ namespace CrmRequestInspector
             {
                 var retrieveOperation = new RetrieveOperation(organizationService, Log.Logger);
                 retrieveOperation.Execute();
+
+                Console.WriteLine("Execution completed successfully.");
             }
         }
 
 
-        public static OrganizationServiceProxy CreateProxy(CrmConnection connection)
+        private static OrganizationServiceProxy CreateProxy(CrmConnection connection)
         {
             var serviceProxy = new OrganizationServiceProxy(connection.ServiceUri, connection.HomeRealmUri,connection.ClientCredentials, connection.DeviceCredentials);
 
