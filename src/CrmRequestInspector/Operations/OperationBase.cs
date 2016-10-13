@@ -1,8 +1,5 @@
-﻿using Microsoft.Xrm.Client;
-using Microsoft.Xrm.Client.Services;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Serilog;
-using System.Configuration;
 
 namespace CrmRequestInspector
 {

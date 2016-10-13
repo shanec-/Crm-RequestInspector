@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xrm.Sdk;
-using Serilog;
 using Microsoft.Xrm.Sdk.Query;
+using Serilog;
 
-namespace CrmRequestInspector
+namespace CrmRequestInspector.Operations
 {
-    public class RetrieveOperation : OperationBase
+    public class LeadRetrieveOperation : OperationBase
     {
-        public RetrieveOperation(IOrganizationService organizationService, ILogger log) : base(organizationService, log)
+        public LeadRetrieveOperation(IOrganizationService organizationService, ILogger log) : base(organizationService, log)
         {
         }
 
@@ -19,7 +19,7 @@ namespace CrmRequestInspector
 
             var result = organizationService.RetrieveMultiple(expression);
 
-            log.Information("Result {result}", result);
+            log.Debug("Result {@result}", result);
         }
     }
 }
