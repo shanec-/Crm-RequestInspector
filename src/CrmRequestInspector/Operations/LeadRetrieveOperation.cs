@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xrm.Sdk;
-using Serilog;
 using Microsoft.Xrm.Sdk.Query;
+using Serilog;
 
-namespace CrmRequestInspector
+namespace CrmRequestInspector.Operations
 {
     public class LeadRetrieveOperation : OperationBase
     {
@@ -19,7 +19,7 @@ namespace CrmRequestInspector
 
             var result = organizationService.RetrieveMultiple(expression);
 
-            log.Information("Result {result}", result);
+            log.Debug("Result {@result}", result);
         }
     }
 }

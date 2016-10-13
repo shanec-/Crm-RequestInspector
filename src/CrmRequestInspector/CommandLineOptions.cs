@@ -3,7 +3,7 @@ using CommandLine;
 
 namespace CrmRequestInspector
 {
-    class CommandlineOptions
+    class CommandLineOptions
     {
         [Option('o', Required = true, HelpText ="List of operations to be executed")]
         public IEnumerable<string> Operations { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Serilog;
 
 namespace CrmRequestInspector.Operations
@@ -16,7 +11,7 @@ namespace CrmRequestInspector.Operations
 
         public override void Execute()
         {
-            Entity entity = new Entity("Lead");
+            Entity entity = new Entity("lead");
             entity.Attributes["subject"] = "my test topic";
             this.organizationService.Create(entity);
         }
