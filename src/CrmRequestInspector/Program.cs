@@ -16,7 +16,7 @@ namespace CrmRequestInspector
         {
             InitializeLog();
 
-            var options = Parser.Default.ParseArguments<CommandlineOptions>(args);
+            var options = Parser.Default.ParseArguments<CommandLineOptions>(args);
             options.WithParsed(x => ExecuteOperation(x.Operations, x.IsResumeOnError));
         }
 
