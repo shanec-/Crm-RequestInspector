@@ -1,8 +1,11 @@
 # Crm-RequestInspector
+
+[![Build status](https://ci.appveyor.com/api/projects/status/3tcohcdgah20agkv/branch/master?svg=true)](https://ci.appveyor.com/project/shanec-/crm-requestinspector/branch/master)
+
 Request Inspector for Dynamics CRM. It logs the raw requests being made to Dynamics CRM via the Organization Service.
 
 Inspired by the blog post by Lucas Alexander: 
-http://alexanderdevelopment.net/post/2013/02/21/accessing-raw-soap-requests-responses-from-dynamics-crm-web-services-in-c/
+[http://alexanderdevelopment.net/post/2013/02/21/accessing-raw-soap-requests-responses-from-dynamics-crm-web-services-in-c/](http://alexanderdevelopment.net/post/2013/02/21/accessing-raw-soap-requests-responses-from-dynamics-crm-web-services-in-c/)
 
 
 ## Usage
